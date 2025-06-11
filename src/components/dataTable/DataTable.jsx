@@ -2,11 +2,25 @@ import { DataGrid, GridToolbarQuickFilter, Toolbar } from "@mui/x-data-grid";
 import "./dataTable.scss";
 import { GridToolbar } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
+import { useMutation, useQueryClient } from "@tanstack/react-query";
 
 function DataTable({ columns, rows, slug }) {
+  const queryClient = useQueryClient();
+
+  const mutation = useMutation({
+    mutationFn: (id) => {
+      return fetch(`http://localhost:8800/api/${slug}/${id}`, {
+        method: "delete",
+      });
+    },
+    onSuccess: () => {
+      queryClient.invalidateQueries([`all${slug}`]);
+    },
+  });
+
   const handleDelete = (id) => {
     //delete the item
-    console.log(id + "has been deleted");
+    mutation.mutate(id);
   };
 
   const actionColumn = {
