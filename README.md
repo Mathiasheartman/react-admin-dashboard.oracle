@@ -13,4 +13,4 @@ Ideal for SaaS dashboards, internal admin tools, or monitoring systems.
 
 Tech Stack: React, Tailwind CSS, Recharts, Vite
 
-Live Preview: heartman-admin-dashboard.vercel.app
+Live Preview: http://heartman-admin-dashboard.vercel.app
