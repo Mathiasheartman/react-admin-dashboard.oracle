@@ -25,6 +25,10 @@
       padding: 10px;
       border-radius: 5px;
 
+      @include sm {
+        padding: 10px 0px;
+      }
+
       &:hover {
         background-color: $soft-bg;
       }
