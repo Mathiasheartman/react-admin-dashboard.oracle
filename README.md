@@ -12,4 +12,5 @@ Heartman Admin Dashboard is a fully responsive and modern admin dashboard templa
 Ideal for SaaS dashboards, internal admin tools, or monitoring systems.
 
 Tech Stack: React, Tailwind CSS, Recharts, Vite
-Live Preview: http://www.heartman-admin-dashboard.vercel.app
+
+Live Preview: heartman-admin-dashboard.vercel.app
