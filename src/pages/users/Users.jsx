@@ -2,18 +2,18 @@ import { useState } from "react";
 import DataTable from "../../components/dataTable/DataTable";
 import "./users.scss";
 import Add from "../../components/add/Add";
-import { useQuery } from "@tanstack/react-query";
+// import { useQuery } from "@tanstack/react-query";
 import { userRows } from "../../data";
 
 function Users() {
   const [open, setOpen] = useState(false);
 
   const columns = [
-    { field: "id", headerName: "ID", width: 50 },
+    { field: "id", headerName: "ID", width: 60 },
     {
       field: "img",
       headerName: "Avatar",
-      width: 70,
+      width: 60,
       renderCell: (params) => {
         return <img src={params.row.img || "/noavatar.png"} alt="" />;
       },
@@ -42,7 +42,7 @@ function Users() {
       field: "phone",
       type: "string",
       headerName: "Phone",
-      width: 130,
+      width: 110,
     },
     {
       field: "createdAt",
@@ -53,16 +53,16 @@ function Users() {
     {
       field: "verified",
       headerName: "Verified",
-      width: 150,
+      width: 70,
       type: "boolean",
     },
   ];
 
-  const { isLoading } = useQuery({
-    queryKey: ["allusers"],
-    queryFn: () =>
-      fetch("http://localhost:8800/api/users").then((res) => res.json()),
-  });
+  // const { isLoading } = useQuery({
+  //   queryKey: ["allusers"],
+  //   queryFn: () =>
+  //     fetch("http://localhost:8800/api/users").then((res) => res.json()),
+  // });
 
   return (
     <div className="users">
@@ -70,11 +70,7 @@ function Users() {
         <h2>Users</h2>
         <button onClick={() => setOpen(true)}>Add New User</button>
       </div>
-      {isLoading ? (
-        "Loading..."
-      ) : (
-        <DataTable slug="users" columns={columns} rows={userRows} />
-      )}
+      <DataTable slug="users" columns={columns} rows={userRows} />
       {open && <Add slug="user" columns={columns} setOpen={setOpen} />}
     </div>
   );

@@ -1,4 +1,4 @@
-import { DataGrid, GridToolbarQuickFilter, Toolbar } from "@mui/x-data-grid";
+import { DataGrid } from "@mui/x-data-grid";
 import "./dataTable.scss";
 import { GridToolbar } from "@mui/x-data-grid";
 import { Link } from "react-router-dom";
@@ -26,7 +26,7 @@ function DataTable({ columns, rows, slug }) {
   const actionColumn = {
     field: "action",
     headerName: "Action",
-    width: 200,
+    width: 80,
     renderCell: (params) => {
       return (
         <div className="action">

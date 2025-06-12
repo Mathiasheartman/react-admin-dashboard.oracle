@@ -8,11 +8,11 @@ function Products() {
   const [open, setOpen] = useState(false);
 
   const columns = [
-    { field: "id", headerName: "ID", width: 90 },
+    { field: "id", headerName: "ID", width: 50 },
     {
       field: "img",
       headerName: "Image",
-      width: 100,
+      width: 60,
       renderCell: (params) => {
         return <img src={params.row.img} alt="" />;
       },
@@ -21,36 +21,36 @@ function Products() {
       field: "title",
       type: "string",
       headerName: "Title",
-      width: 250,
+      width: 220,
     },
     {
       field: "color",
       type: "string",
       headerName: "Color",
-      width: 150,
+      width: 90,
     },
     {
       field: "price",
       type: "string",
       headerName: "Price",
-      width: 200,
+      width: 90,
     },
     {
       field: "producer",
       type: "string",
       headerName: "Producer",
-      width: 200,
+      width: 110,
     },
     {
       field: "createdAt",
       headerName: "Created At",
-      width: 200,
+      width: 110,
       type: "string",
     },
     {
       field: "inStock",
       headerName: "In Stock",
-      width: 150,
+      width: 70,
       type: "boolean",
     },
   ];
