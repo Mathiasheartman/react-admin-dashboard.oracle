@@ -3,6 +3,7 @@ import DataTable from "../../components/dataTable/DataTable";
 import "./users.scss";
 import Add from "../../components/add/Add";
 import { useQuery } from "@tanstack/react-query";
+import { userRows } from "../../data";
 
 function Users() {
   const [open, setOpen] = useState(false);
@@ -57,7 +58,7 @@ function Users() {
     },
   ];
 
-  const { isLoading, data } = useQuery({
+  const { isLoading } = useQuery({
     queryKey: ["allusers"],
     queryFn: () =>
       fetch("http://localhost:8800/api/users").then((res) => res.json()),
@@ -72,7 +73,7 @@ function Users() {
       {isLoading ? (
         "Loading..."
       ) : (
-        <DataTable slug="users" columns={columns} rows={data} />
+        <DataTable slug="users" columns={columns} rows={userRows} />
       )}
       {open && <Add slug="user" columns={columns} setOpen={setOpen} />}
     </div>

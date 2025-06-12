@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./products.scss";
 import DataTable from "../../components/dataTable/DataTable";
 import Add from "../../components/add/Add";
-import { products, userRows } from "../../data";
+import { products } from "../../data";
 
 function Products() {
   const [open, setOpen] = useState(false);
